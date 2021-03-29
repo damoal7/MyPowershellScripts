@@ -7,6 +7,7 @@ Release Notes:
         First version published on TechNet Script Gallery
 
 20210329-DH modified the bounds of the password length to maximum (28characters)
+            10hours should lapse between rerunning the execution, step 3, twice to clear the cache
 
 ----------------------------------------------------------------------------------------------------#>
 
