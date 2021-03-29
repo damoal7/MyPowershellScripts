@@ -3,7 +3,11 @@ Release Notes:
     v1.4: 
         Author: Jared Poeppelman, Microsoft
         https://gist.github.com/mubix/fd0c89ec021f70023695
+	https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51
         First version published on TechNet Script Gallery
+
+20210329-DH modified the bounds of the password length to maximum (28characters)
+
 ----------------------------------------------------------------------------------------------------#>
 
 function Test-Command
@@ -78,7 +82,8 @@ function New-ComplexPassword
     Param([string]$Username, [int]$PasswordLength)
 
     # Keep the password length within bounds
-    If ($PasswordLength -lt 8) {$PasswordLength = 8}
+    # DH20210329 - make it maximum - 28 character long
+    If ($PasswordLength -lt 8) {$PasswordLength = 28}
     If ($PasswordLength -gt 28) {$PasswordLength = 28}
 	
 	# Define base characters for complex password and avoid ambiguous characters like I,i,1,L,l,O,o,0, etc.
