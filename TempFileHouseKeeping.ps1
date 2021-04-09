@@ -6,8 +6,8 @@ $tempfolders = @(
 	"C:\Windows\Prefetch\*",
 	"C:\Documents and Settings\*\Local Settings\temp\*",
 	"C:\Users\*\AppData\Local\Temp\*",
-  "C:\Temp\";
-  ""
+	"C:\Temp\",
+	""
 )
 
 Get-ChildItem -path $tempfolders -file -Recurse -force | Where-Object {$_.CreationTime -lt $Limit } | Remove-Item -Force
